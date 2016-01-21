@@ -42,6 +42,7 @@ module.exports.component = {
     loader.load(objUrl, mtlUrl, function (object) {
       this.model = object;
       this.el.object3D.add(object);
+      this.el.emit("obj-loaded");
     }.bind(this));
   },
 
@@ -55,6 +56,7 @@ module.exports.component = {
       this.model = object;
       this.applyMaterial();
       this.el.object3D.add(object);
+      this.el.emit("obj-loaded");
     }.bind(this));
   },
 
